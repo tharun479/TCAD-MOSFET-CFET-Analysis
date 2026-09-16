@@ -1,215 +1,391 @@
-# TCAD-Based Planar MOSFET and CFET Analysis
+# ⚡ TCAD-Based Planar MOSFET & CFET Analysis
 
-**Device Modeling and Simulation using Synopsys Sentaurus TCAD**
+### 🔬 Device Modeling & Simulation using Synopsys Sentaurus TCAD
 
-This project presents the modeling and electrical analysis of nanoscale transistor structures using **Synopsys Sentaurus TCAD**. The work includes planar MOSFET simulation, electrical characteristic extraction, threshold-voltage analysis, and modeling of a vertically stacked complementary FET (CFET) architecture.
+<p align="center">
 
----
+<img src="https://img.shields.io/badge/Domain-Semiconductor%20Devices-8A2BE2?style=for-the-badge">
+<img src="https://img.shields.io/badge/TCAD-Sentaurus-0066CC?style=for-the-badge">
+<img src="https://img.shields.io/badge/MOSFET-Device%20Modeling-FF6B35?style=for-the-badge">
+<img src="https://img.shields.io/badge/CFET-Advanced%20Architecture-00A86B?style=for-the-badge">
 
-## Project Overview
+</p>
 
-Technology scaling has pushed conventional planar transistor architectures toward increasingly complex device structures. TCAD provides a physics-based approach for studying these devices before fabrication by allowing their geometry, materials, doping profiles, and electrical behavior to be investigated through numerical simulation.
+<p align="center">
 
-This project was carried out in two stages:
+<img src="https://img.shields.io/badge/SDE-Structure%20Editor-555555?style=flat-square">
+<img src="https://img.shields.io/badge/SDevice-Device%20Simulation-555555?style=flat-square">
+<img src="https://img.shields.io/badge/SVisual-Data%20Analysis-555555?style=flat-square">
 
-1. **Planar MOSFET modeling and characterization**
-2. **CFET modeling and scaling analysis**
-
-The simulations were performed using the Synopsys Sentaurus TCAD environment.
-
----
-
-## Objectives
-
-* Construct and simulate a planar MOSFET device.
-* Define semiconductor geometry, materials, contacts, and doping profiles.
-* Generate a suitable device mesh for numerical simulation.
-* Analyze MOSFET electrical characteristics.
-* Obtain drain-current versus gate-voltage ($I_D$-$V_G$) characteristics.
-* Analyze drain-current versus drain-voltage ($I_D$-$V_D$) behavior.
-* Extract the threshold voltage from simulated characteristics.
-* Investigate advanced transistor architectures using CFET modeling.
-* Study the effect of device scaling and vertical transistor integration.
+</p>
 
 ---
 
-## Tools and Technologies
+## 🧠 About the Project
 
-| Tool                                      | Purpose                                          |
-| ----------------------------------------- | ------------------------------------------------ |
-| Synopsys Sentaurus Structure Editor (SDE) | Device geometry and structure generation         |
-| Sentaurus Mesh                            | Mesh generation and refinement                   |
-| Sentaurus Device (SDevice)                | Electrical device simulation                     |
-| Sentaurus Visual (SVisual)                | Visualization and analysis of simulation results |
-| TCAD                                      | Physics-based semiconductor device modeling      |
+This project focuses on the **physics-based modeling and electrical analysis of nanoscale transistor structures** using **Synopsys Sentaurus TCAD**.
 
----
+The work covers the simulation of a conventional **planar MOSFET** followed by the modeling of an advanced **vertically stacked Complementary FET (CFET)** architecture.
 
-# 1. Planar MOSFET
+The project explores:
 
-## Device Structure
+> **Device Geometry → Doping → Meshing → Physics → Electrical Simulation → Parameter Extraction**
 
-The planar MOSFET was constructed by defining the semiconductor region, source/drain regions, gate dielectric, gate electrode, and electrical contacts.
-
-The device structure was then meshed with finer resolution in electrically important regions such as the channel and semiconductor-insulator interface.
-
-
+The primary goal is to understand how transistor architecture and scaling influence device behavior at advanced technology dimensions.
 
 ---
 
-## Electrical Characterization
+## 🎯 Project Objectives
 
-The simulated device was characterized using bias sweeps to obtain its electrical behavior.
-
-### Drain Characteristics
-
-The drain current was evaluated as a function of drain voltage for different gate-bias conditions.
-
-
-
-The resulting characteristics demonstrate the transition from the low-field region toward current saturation as the drain voltage increases.
-
----
-
-## Transfer Characteristics
-
-The $I_D$-$V_G$ characteristic was used to study the transistor turn-on behavior and extract the threshold voltage.
-
-
-
-Threshold voltage extraction was performed from the simulated transfer characteristic using an appropriate extraction method.
+| #     | Objective                                                             |
+| ----- | --------------------------------------------------------------------- |
+| 🔹 01 | Construct and simulate a planar MOSFET                                |
+| 🔹 02 | Define semiconductor geometry, materials, contacts and doping         |
+| 🔹 03 | Generate an appropriate device mesh                                   |
+| 🔹 04 | Analyze MOSFET electrical characteristics                             |
+| 🔹 05 | Obtain $I_D$-$V_G$ transfer characteristics                           |
+| 🔹 06 | Obtain $I_D$-$V_D$ output characteristics                             |
+| 🔹 07 | Extract threshold voltage from simulated characteristics              |
+| 🔹 08 | Develop a 3D CFET device structure                                    |
+| 🔹 09 | Investigate vertically stacked complementary transistor architectures |
+| 🔹 10 | Study device scaling and electrical behavior                          |
 
 ---
 
-# 2. CFET Modeling
+# 🛠️ Tools & Technologies
 
-Complementary FET (CFET) architectures vertically integrate complementary transistor devices, providing a potential approach for increasing transistor density beyond conventional side-by-side CMOS layouts.
-
-The CFET structure in this project was modeled using Sentaurus Structure Editor and subsequently analyzed using Sentaurus Device.
-
-
-
-The model includes vertically arranged device regions together with source/drain regions, gate structures, dielectric layers, and isolation regions.
-
----
-
-## CFET Electrical Analysis
-
-The simulated CFET structure was investigated to understand its electrical behavior and the influence of device geometry and scaling parameters.
-
-
-
-The modeling process provides insight into the electrostatic and electrical behavior of vertically integrated transistor architectures.
+|       Tool / Technology       | Application                                 |
+| :---------------------------: | ------------------------------------------- |
+| 🔬 **Synopsys Sentaurus SDE** | Device geometry and structure generation    |
+|     📐 **Sentaurus Mesh**     | Mesh generation and refinement              |
+|    ⚙️ **Sentaurus SDevice**   | Semiconductor device simulation             |
+|    📊 **Sentaurus SVisual**   | Visualization and electrical analysis       |
+|          🧪 **TCAD**          | Physics-based semiconductor device modeling |
+|   💻 **Tcl / Command Files**  | Simulation setup and automation             |
 
 ---
 
-# 3. Simulation Workflow
+# 🟣 1. Planar MOSFET
 
-The overall TCAD workflow used in this project is:
+## 🧩 Device Structure
+
+The first stage of the project involved constructing and simulating a **planar MOSFET**.
+
+The device structure was defined by specifying:
+
+* Semiconductor regions
+* Source and drain regions
+* Channel region
+* Gate dielectric
+* Gate electrode
+* Electrical contacts
+* Doping profiles
+
+A refined mesh was applied to electrically important regions, particularly around the **channel and semiconductor–insulator interface**.
+
+### 📐 Device Structure
+
+> 📌 Add your SVisual structure screenshot here.
 
 ```text
-Device Geometry
-      ↓
-Material Definition
-      ↓
-Doping / Profiles
-      ↓
-Contacts and Electrodes
-      ↓
-Mesh Generation
-      ↓
-Physical Models
-      ↓
-Electrical Biasing
-      ↓
-Sentaurus Device Simulation
-      ↓
-SVisual Analysis
-      ↓
-I-V Characteristics
-      ↓
-Parameter Extraction
+![Planar MOSFET Structure](figures/planar_mosfet_structure.png)
 ```
 
 ---
 
-# 4. Repository Structure
+## ⚡ Electrical Characterization
+
+The simulated MOSFET was electrically characterized using appropriate voltage bias sweeps.
+
+### 📈 Drain Characteristics — $I_D$-$V_D$
+
+The drain current was evaluated as a function of drain voltage for different gate-bias conditions.
+
+The resulting characteristics illustrate the progression from the low-field region toward the **current-saturation regime** as the drain voltage increases.
+
+### 📊 Result
+
+> 📌 Add your $I_D$-$V_D$ plot here.
+
+```text
+![MOSFET Output Characteristics](figures/planar_mosfet_iv.png)
+```
+
+---
+
+## 🔋 Transfer Characteristics — $I_D$-$V_G$
+
+The transfer characteristic was obtained by sweeping the gate voltage while maintaining an appropriate drain bias.
+
+The resulting $I_D$-$V_G$ curve was used to study:
+
+* Transistor turn-on behavior
+* Subthreshold behavior
+* Drain current variation with gate voltage
+* Threshold-voltage extraction
+
+### 📊 Result
+
+```text
+![MOSFET Transfer Characteristics](figures/Id_Vg.png)
+```
+
+---
+
+## 🎚️ Threshold Voltage Extraction
+
+The threshold voltage was extracted from the simulated transfer characteristic using the selected extraction methodology.
+
+```text
+![Threshold Voltage Extraction](figures/threshold_voltage.png)
+```
+
+---
+
+# 🟢 2. CFET Modeling
+
+## 🏗️ What is a CFET?
+
+A **Complementary FET (CFET)** is an advanced transistor architecture in which complementary transistor devices are vertically integrated rather than placed side-by-side.
+
+This vertical integration can provide a pathway toward increased device density and reduced footprint as conventional CMOS scaling becomes increasingly challenging.
+
+---
+
+## 🧱 CFET Structure
+
+The CFET structure was modeled using **Sentaurus Structure Editor** and subsequently prepared for electrical simulation using **Sentaurus Device**.
+
+The model incorporates vertically arranged device regions together with:
+
+* 🟦 Semiconductor regions
+* 🟨 Source/drain regions
+* 🟪 Gate structures
+* ⚪ Dielectric layers
+* 🔲 Isolation regions
+* 📐 Device-specific geometry and scaling parameters
+
+### 🔬 3D CFET Model
+
+```text
+![CFET Structure](figures/cfet_structure.png)
+```
+
+---
+
+## ⚡ CFET Electrical Analysis
+
+The modeled CFET structure is being investigated to understand its electrical behavior and the influence of geometry and scaling parameters.
+
+The analysis focuses on understanding:
+
+* Device electrostatics
+* Current–voltage behavior
+* Vertical device integration
+* Scaling effects
+* Interaction between vertically stacked devices
+
+### 📊 Simulation Results
+
+```text
+![CFET Results](figures/cfet_results.png)
+```
+
+---
+
+# 🔄 3. TCAD Simulation Workflow
+
+The overall simulation flow used in this project can be summarized as:
+
+```text
+                ┌─────────────────────┐
+                │   Device Geometry   │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │ Material Definition │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │  Doping Profiles    │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │ Contacts / Electrodes│
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │   Mesh Generation   │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │  Physical Models   │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │ Electrical Biasing │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │ Sentaurus Device   │
+                └──────────┬──────────┘
+                           ↓
+                ┌─────────────────────┐
+                │     SVisual        │
+                └──────────┬──────────┘
+                           ↓
+              ┌─────────────────────────┐
+              │ I–V & Parameter Analysis│
+              └─────────────────────────┘
+```
+
+---
+
+# 📁 4. Repository Structure
 
 ```text
 TCAD-MOSFET-CFET-Analysis/
 │
-├── planar_mosfet/
-│   ├── sde/
-│   ├── sdevice/
-│   ├── mesh/
-│   └── results/
+├── 📄 README.md
 │
-├── cfet/
-│   ├── sde/
-│   ├── sdevice/
-│   ├── mesh/
-│   └── results/
+├── 🟣 planar_mosfet/
+│   ├── 📐 sde/
+│   │   └── planar_mosfet.sde
+│   │
+│   ├── ⚙️ sdevice/
+│   │   └── planar_mosfet_des.cmd
+│   │
+│   ├── 📏 mesh/
+│   │   └── planar_mosfet_msh.cmd
+│   │
+│   └── 📊 results/
+│       ├── Id_Vg.png
+│       ├── Id_Vd.png
+│       └── threshold_voltage.png
 │
-├── figures/
-├── docs/
-└── README.md
+├── 🟢 cfet/
+│   ├── 📐 sde/
+│   │   └── cfet.sde
+│   │
+│   ├── ⚙️ sdevice/
+│   │   └── cfet_des.cmd
+│   │
+│   ├── 📏 mesh/
+│   │   └── cfet_msh.cmd
+│   │
+│   └── 📊 results/
+│       ├── cfet_structure.png
+│       └── cfet_results.png
+│
+├── 🖼️ figures/
+│   ├── planar_mosfet_structure.png
+│   ├── planar_mosfet_iv.png
+│   ├── threshold_voltage.png
+│   ├── cfet_structure.png
+│   └── cfet_results.png
+│
+├── 📚 docs/
+│   └── project_report.pdf
+│
+├── 🚫 .gitignore
+│
+└── 📄 LICENSE
 ```
 
 ---
 
-# 5. Key Learning Outcomes
+# 📚 5. Key Learning Outcomes
 
-Through this project, I worked with:
+Through this project, I gained hands-on experience with:
+
+### 🔬 Device Modeling
 
 * Semiconductor device geometry definition
-* Doping and material specification
-* TCAD mesh generation and refinement
-* MOSFET electrical characterization
-* $I_D$-$V_G$ and $I_D$-$V_D$ analysis
+* Material specification
+* Doping profile definition
+* Electrical contact definition
+* Device meshing and refinement
+
+### ⚡ Device Characterization
+
+* $I_D$-$V_D$ analysis
+* $I_D$-$V_G$ analysis
 * Threshold-voltage extraction
-* Numerical device simulation
+* Bias-sweep configuration
+* Electrical parameter analysis
+
+### 🧪 TCAD Simulation
+
 * Sentaurus Structure Editor
+* Sentaurus Mesh
 * Sentaurus Device
 * Sentaurus Visual
-* Advanced transistor architecture modeling
-* CFET structure and scaling considerations
+* Numerical semiconductor-device simulation
+
+### 🚀 Advanced Devices
+
+* 3D transistor modeling
+* CFET architecture
+* Vertical transistor integration
+* Device scaling considerations
+* Electrostatic behavior of advanced architectures
 
 ---
 
-# 6. Project Status
+# 📌 6. Project Status
 
-### Planar MOSFET
-
-**Completed**
-
-* Device structure
-* Meshing
-* Electrical simulation
-* I-V characterization
-
-
-### CFET
-
-**In Progress / Under Development**
-
-* 3D device structure modeling
-* Electrical simulation
-* Scaling analysis
-* CFET inverter analysis
+| Module                          |     Status     |
+| ------------------------------- | :------------: |
+| 🟣 Planar MOSFET Structure      |   ✅ Completed  |
+| 🟣 MOSFET Meshing               |   ✅ Completed  |
+| 🟣 Electrical Simulation        |   ✅ Completed  |
+| 🟣 $I_D$-$V_D$ Analysis         |   ✅ Completed  |
+| 🟣 $I_D$-$V_G$ Analysis         |   ✅ Completed  |
+| 🟣 Threshold Voltage Extraction |   ✅ Completed  |
+| 🟢 3D CFET Structure            |   ✅ Completed  |
+| 🟢 CFET Electrical Simulation   | 🔄 In Progress |
+| 🟢 Scaling Analysis             | 🔄 In Progress |
+| 🟢 CFET Inverter Analysis       | 🔄 In Progress |
 
 ---
 
-## Author
+# 📈 7. Future Work
 
-**Banoth Tharun**
+The project can be extended toward:
 
-B.Tech — Microelectronics and VLSI
-Indian Institute of Technology Mandi
-
-GitHub: [@tharun479](https://github.com/tharun479)
+* 🔹 Optimization of CFET geometry
+* 🔹 Detailed scaling analysis
+* 🔹 Comparison between planar MOSFET and CFET architectures
+* 🔹 Analysis of electrostatic scaling effects
+* 🔹 CFET inverter implementation
+* 🔹 Investigation of device performance under different design parameters
 
 ---
 
-## Note
+# 👨‍💻 Author
 
-This repository contains simulation input files, selected output figures, and analysis associated with the TCAD study. Large generated simulation datasets and proprietary software files are intentionally excluded from version control.
+### **Banoth Tharun**
+
+🎓 B.Tech — Microelectronics and VLSI
+🏛️ Indian Institute of Technology Mandi
+💻 GitHub: [@tharun479](https://github.com/tharun479)
+
+---
+
+# 📜 Note
+
+This repository contains selected **TCAD input files, simulation configurations, output figures, and analysis** associated with the project.
+
+Large generated simulation datasets and proprietary software-generated files are intentionally excluded from version control.
+
+> ⚠️ **Software Requirement:** Running the simulation files requires access to **Synopsys Sentaurus TCAD**.
+
+---
+
+<p align="center">
+
+### 🔬 Semiconductor Devices • TCAD • MOSFET • CFET • Device Scaling
+
+**Built through simulation, analysis, and device-level exploration.**
+
+</p>
