@@ -1,0 +1,199 @@
+Evaluating file n1_dvs.cmd
+---> (sdegeo:set-auto-region-naming OFF)
+#t
+---> (sdegeo:create-cuboid (position 0.0 0.0 0.0) (position 0.04 0.044 0.02) SiO2 BDI)
+#[body 5 1]
+---> (sdegeo:create-cuboid (position 0.0 0.0 0.02) (position 0.04 0.01 0.05) Silicon Source_P)
+#[body 6 1]
+---> (sdegeo:create-cuboid (position 0.0 0.034 0.02) (position 0.04 0.044 0.05) Silicon Drain_P)
+#[body 7 1]
+---> (sdegeo:create-cuboid (position 0.0 0.01 0.02) (position 0.04 0.016 0.027) Si3N4 Spacer_P_SourceR)
+#[body 8 1]
+---> (sdegeo:create-cuboid (position 0.0 0.028 0.02) (position 0.04 0.034 0.027) Si3N4 Spacer_P_SourceL)
+#[body 9 1]
+---> (sdegeo:create-cuboid (position 0.0 0.01 0.043) (position 0.04 0.016 0.05) Si3N4 Spacer_P_DrainR)
+#[body 10 1]
+---> (sdegeo:create-cuboid (position 0.0 0.028 0.043) (position 0.04 0.034 0.05) Si3N4 Spacer_P_DrainL)
+#[body 11 1]
+---> (sdegeo:create-cuboid (position 0.015 0.0 0.028) (position 0.025 0.044 0.033) Silicon Nanosheet_P1)
+#[body 12 1]
+---> (sdegeo:create-cuboid (position 0.015 0.0 0.037) (position 0.025 0.044 0.042) Silicon Nanosheet_P2)
+#[body 13 1]
+---> (sdegeo:create-cuboid (position 0.014 0.0 0.027) (position 0.026 0.044 0.034) SiO2 tox_P1)
+#[body 14 1]
+---> (sdegeo:create-cuboid (position 0.013 0.0 0.026) (position 0.027 0.044 0.035) HfO2 ox_P1)
+#[body 15 1]
+---> (sdegeo:create-cuboid (position 0.014 0.0 0.036) (position 0.026 0.044 0.043) SiO2 tox_P2)
+#[body 16 1]
+---> (sdegeo:create-cuboid (position 0.013 0.0 0.035) (position 0.027 0.044 0.044) HfO2 ox_P2)
+#[body 17 1]
+---> (sdegeo:create-cuboid (position 0.0 0.0 0.05) (position 0.04 0.016 0.07) SiO2 Separator_R)
+#[body 18 1]
+---> (sdegeo:create-cuboid (position 0.0 0.028 0.05) (position 0.04 0.044 0.07) SiO2 Separator_L)
+#[body 19 1]
+---> (sdegeo:create-cuboid (position 0.0 0.0 0.07) (position 0.04 0.01 0.1) Silicon Source_N)
+#[body 20 1]
+---> (sdegeo:create-cuboid (position 0.0 0.034 0.07) (position 0.04 0.044 0.1) Silicon Drain_N)
+#[body 21 1]
+---> (sdegeo:create-cuboid (position 0.0 0.01 0.07) (position 0.04 0.016 0.077) Si3N4 Spacer_N_SourceR)
+#[body 22 1]
+---> (sdegeo:create-cuboid (position 0.0 0.028 0.07) (position 0.04 0.034 0.077) Si3N4 Spacer_N_SourceL)
+#[body 23 1]
+---> (sdegeo:create-cuboid (position 0.0 0.01 0.093) (position 0.04 0.016 0.1) Si3N4 Spacer_N_DrainR)
+#[body 24 1]
+---> (sdegeo:create-cuboid (position 0.0 0.028 0.093) (position 0.04 0.034 0.1) Si3N4 Spacer_N_DrainL)
+#[body 25 1]
+---> (sdegeo:create-cuboid (position 0.015 0.0 0.078) (position 0.025 0.044 0.083) Silicon Nanosheet_N1)
+#[body 26 1]
+---> (sdegeo:create-cuboid (position 0.015 0.0 0.087) (position 0.025 0.044 0.092) Silicon Nanosheet_N2)
+#[body 27 1]
+---> (sdegeo:create-cuboid (position 0.014 0.0 0.077) (position 0.026 0.044 0.084) SiO2 tox_N1)
+#[body 28 1]
+---> (sdegeo:create-cuboid (position 0.013 0.0 0.076) (position 0.027 0.044 0.085) HfO2 ox_N1)
+#[body 29 1]
+---> (sdegeo:create-cuboid (position 0.014 0.0 0.086) (position 0.026 0.044 0.093) SiO2 tox_N2)
+#[body 30 1]
+---> (sdegeo:create-cuboid (position 0.013 0.0 0.085) (position 0.027 0.044 0.094) HfO2 ox_N2)
+#[body 31 1]
+---> (sdegeo:set-default-boolean BAB)
+"ABA"
+---> (sdegeo:create-cuboid (position 0.013 0.016 0.026) (position 0.027 0.028 0.094) TiN Gate)
+#[body 32 1]
+---> (sdegeo:set-default-boolean ABA)
+"BAB"
+---> (sdegeo:define-contact-set source_P)
+()
+---> (sdegeo:define-contact-set drain_P)
+()
+---> (sdegeo:define-contact-set source_N)
+()
+---> (sdegeo:define-contact-set drain_N)
+()
+---> (sdegeo:define-contact-set gate)
+()
+---> (sdegeo:set-current-contact-set source_P)
+""
+---> (sdegeo:set-contact (list (car (find-face-id (position 0.02 0.0 0.035)))) source_P)
+#t
+---> (sdegeo:set-current-contact-set drain_P)
+"source_P"
+---> (sdegeo:set-contact (list (car (find-face-id (position 0.02 0.044 0.035)))) drain_P)
+#t
+---> (sdegeo:set-current-contact-set source_N)
+"drain_P"
+---> (sdegeo:set-contact (list (car (find-face-id (position 0.02 0.0 0.085)))) source_N)
+#t
+---> (sdegeo:set-current-contact-set drain_N)
+"source_N"
+---> (sdegeo:set-contact (list (car (find-face-id (position 0.02 0.044 0.085)))) drain_N)
+#t
+---> (sdegeo:set-current-contact-set gate)
+"drain_N"
+---> (sdegeo:set-contact (list (car (find-face-id (position 0.02 0.028 0.06)))) gate)
+#t
+---> (sdedr:define-constant-profile Dop_NS_P1 PhosphorusActiveConcentration 5e+15)
+#t
+---> (sdedr:define-constant-profile-region Place_NS_P1 Dop_NS_P1 Nanosheet_P1)
+#t
+---> (sdedr:define-constant-profile Dop_NS_P2 PhosphorusActiveConcentration 5e+15)
+#t
+---> (sdedr:define-constant-profile-region Place_NS_P2 Dop_NS_P2 Nanosheet_P2)
+#t
+---> (sdedr:define-constant-profile Dop_NS_N1 BoronActiveConcentration 5e+15)
+#t
+---> (sdedr:define-constant-profile-region Place_NS_N1 Dop_NS_N1 Nanosheet_N1)
+#t
+---> (sdedr:define-constant-profile Dop_NS_N2 BoronActiveConcentration 5e+15)
+#t
+---> (sdedr:define-constant-profile-region Place_NS_N2 Dop_NS_N2 Nanosheet_N2)
+#t
+---> (sdedr:define-constant-profile Dop_Src_P BoronActiveConcentration 5e+20)
+#t
+---> (sdedr:define-constant-profile-region Place_Src_P Dop_Src_P Source_P)
+#t
+---> (sdedr:define-constant-profile Dop_Drn_P BoronActiveConcentration 5e+20)
+#t
+---> (sdedr:define-constant-profile-region Place_Drn_P Dop_Drn_P Drain_P)
+#t
+---> (sdedr:define-constant-profile Dop_Src_N PhosphorusActiveConcentration 5e+20)
+#t
+---> (sdedr:define-constant-profile-region Place_Src_N Dop_Src_N Source_N)
+#t
+---> (sdedr:define-constant-profile Dop_Drn_N PhosphorusActiveConcentration 5e+20)
+#t
+---> (sdedr:define-constant-profile-region Place_Drn_N Dop_Drn_N Drain_N)
+#t
+---> (sdedr:define-refeval-window RefWin_Global Cuboid (position -0.001 -0.001 -0.001) (position 0.045 0.05 0.105))
+#[body 1013 1]
+---> (sdedr:define-refinement-size RefSize_Global 0.01 0.01 0.01 0.01 0.01 0.01)
+#t
+---> (sdedr:define-refinement-placement RefPlace_Global RefSize_Global (list window RefWin_Global))
+#t
+---> (sdedr:define-refeval-window RefWin_NS_all Cuboid (position 0.012 0.0 0.025) (position 0.028 0.044 0.095))
+#[body 1014 1]
+---> (sdedr:define-refinement-size RefSize_NS_all 0.0007 0.0015 0.0007 0.0007 0.0015 0.0007)
+#t
+---> (sdedr:define-refinement-placement RefPlace_NS_all RefSize_NS_all (list window RefWin_NS_all))
+#t
+---> (sdedr:define-refinement-function RefInt_Si_SiO2 MaxLenInt Silicon SiO2 0.001 1.5 DoubleSide)
+#t
+---> (sdedr:define-refinement-function RefInt_Si_HfO2 MaxLenInt Silicon HfO2 0.001 1.5 DoubleSide)
+#t
+---> (sdedr:define-refinement-function RefInt_HfO2_TiN MaxLenInt HfO2 TiN 0.001 1.5 DoubleSide)
+#t
+---> (sdedr:define-refinement-function RefInt_HfO2_SiO2 MaxLenInt HfO2 SiO2 0.0008 1.5 DoubleSide)
+#t
+---> (sdedr:define-refinement-function Ref_DopGrad DopingConcentration MaxTransDiff 0.5)
+#t
+---> (sdedr:define-refeval-window RefWin_P_Junc Cuboid (position 0.013 0.0 0.025) (position 0.027 0.044 0.046))
+#[body 1015 1]
+---> (sdedr:define-refinement-size RefSize_P_Junc 0.0008 0.002 0.0008 0.0008 0.002 0.0008)
+#t
+---> (sdedr:define-refinement-placement RefPlace_P_Junc RefSize_P_Junc (list window RefWin_P_Junc))
+#t
+---> (sdedr:define-refeval-window RefWin_N_Junc Cuboid (position 0.013 0.0 0.075) (position 0.027 0.044 0.096))
+#[body 1016 1]
+---> (sdedr:define-refinement-size RefSize_N_Junc 0.0008 0.002 0.0008 0.0008 0.002 0.0008)
+#t
+---> (sdedr:define-refinement-placement RefPlace_N_Junc RefSize_N_Junc (list window RefWin_N_Junc))
+#t
+---> (sdedr:define-refeval-window RefWin_SrcP Cuboid (position 0.008 -0.001 0.025) (position 0.032 0.004 0.048))
+#[body 1017 1]
+---> (sdedr:define-refinement-size RefSize_SrcP 0.0015 0.0015 0.002 0.0015 0.0015 0.002)
+#t
+---> (sdedr:define-refinement-placement RefPlace_SrcP RefSize_SrcP (list window RefWin_SrcP))
+#t
+---> (sdedr:define-refeval-window RefWin_DrnP Cuboid (position 0.008 0.04 0.025) (position 0.032 0.045 0.048))
+#[body 1018 1]
+---> (sdedr:define-refinement-size RefSize_DrnP 0.0015 0.0015 0.002 0.0015 0.0015 0.002)
+#t
+---> (sdedr:define-refinement-placement RefPlace_DrnP RefSize_DrnP (list window RefWin_DrnP))
+#t
+---> (sdedr:define-refeval-window RefWin_SrcN Cuboid (position 0.008 -0.001 0.075) (position 0.032 0.004 0.098))
+#[body 1019 1]
+---> (sdedr:define-refinement-size RefSize_SrcN 0.0015 0.0015 0.002 0.0015 0.0015 0.002)
+#t
+---> (sdedr:define-refinement-placement RefPlace_SrcN RefSize_SrcN (list window RefWin_SrcN))
+#t
+---> (sdedr:define-refeval-window RefWin_DrnN Cuboid (position 0.008 0.04 0.075) (position 0.032 0.045 0.098))
+#[body 1020 1]
+---> (sdedr:define-refinement-size RefSize_DrnN 0.0015 0.0015 0.002 0.0015 0.0015 0.002)
+#t
+---> (sdedr:define-refinement-placement RefPlace_DrnN RefSize_DrnN (list window RefWin_DrnN))
+#t
+---> (sdedr:define-refeval-window RefWin_Gate Cuboid (position 0.012 0.015 0.025) (position 0.028 0.029 0.095))
+#[body 1021 1]
+---> (sdedr:define-refinement-size RefSize_Gate 0.0015 0.0015 0.002 0.0015 0.0015 0.002)
+#t
+---> (sdedr:define-refinement-placement RefPlace_Gate RefSize_Gate (list window RefWin_Gate))
+#t
+---> (sde:build-mesh snmesh  new_mesh)
+#t
+---> #[end-of-file]
+"************************************************************************"
+"Sentaurus Structure Editor "
+"Start Time:    Sat Mar 21 08:41:58 2026"
+"End   Time:    Sat Mar 21 08:44:49 2026"
+"Total Execution Time (sec):    171"
+"Total System calls Time (sec): 0"
+"************************************************************************"

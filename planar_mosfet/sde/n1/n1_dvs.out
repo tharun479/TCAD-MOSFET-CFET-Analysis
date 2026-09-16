@@ -1,0 +1,280 @@
+****************************************************************************
+***                      Sentaurus Structure Editor                      ***
+***                        Version T-2022.03-SP2                         ***
+***                      (0.7745337, x86_64, Linux)                      ***
+***                                                                      ***
+***               Copyright (C) 1994-2022 Synopsys, Inc.                 ***
+***        Portions of this software are owned by Spatial Corp.          ***
+***            Copyright (C) 1986-2022. All Rights Reserved.             ***
+***                                                                      ***
+***  This software and the associated documentation are confidential     ***
+***  and proprietary to Synopsys, Inc.  Your use or disclosure of this   ***
+***  software is subject to the terms and conditions of a written        ***
+***  license agreement between you, or your company, and Synopsys, Inc.  ***
+****************************************************************************
+
+Compiled Fri Aug  5 13:04:55 PDT 2022 on: swe-vm-kcr-tcad01
+Running on: login02.iitmandi.ac.in
+Hardware type: x86_64
+OS name: Linux
+OS release: 3.10.0-1160.71.1.el7.x86_64
+OS version: #1 SMP Tue Jun 28 15:37:28 UTC 2022
+Process ID: 185662
+
+version #3 done.
+Evaluating file n1_dvs.cmd
+
+---> (sdegeo:set-auto-region-naming ON)
+
+---> (sdegeo:set-default-boolean ABA)
+
+---> (sdegeo:create-rectangle (position -0.5 0 0) (position 0.5 1 0) Silicon R.Siliconepi)
+
+---> (sdegeo:create-rectangle (position -0.2 -0.004 0) (position 0.2 0 0) Oxide R.Gateox)
+
+---> (sdegeo:create-rectangle (position -0.2 -0.2 0) (position 0.2 -0.004 0) Nitride R.Spacer)
+
+---> (sdegeo:create-rectangle (position -0.1 -0.2 0) (position 0.1 -0.004 0) PolySilicon R.Polygate)
+
+---> (sdegeo:create-rectangle (position -0.5 0.1 0) (position 0.5 0.2 0) Oxide R.Box)
+
+---> (sdegeo:fillet-2d (list (car (find-vertex-id (position 0.2 -0.2 0))) (car (find-vertex-id (position -0.2 -0.2 0)))) 0.08)
+
+shortest edge: 0.100000
+shortest edge: 0.100000
+---> (render:rebuild)
+
+---> (sdegeo:define-contact-set source 4 (color:rgb 1 0 0) ##)
+
+---> (sdegeo:define-contact-set drain 4 (color:rgb 0 1 0) ##)
+
+---> (sdegeo:define-contact-set gate 4 (color:rgb 1 1 0) ##)
+
+---> (sdegeo:define-contact-set substrate 4 (color:rgb 0 0 1) ##)
+
+---> (sdegeo:define-contact-set bodytie 4 (color:rgb 1 1 1) ##)
+
+---> (sdegeo:set-current-contact-set source)
+
+---> (sdegeo:set-contact (list (car (find-edge-id (position -0.35 0 0)))) source)
+
+(sdegeo:set-contact (list (car (find-edge-id (position -0.35 0 0)))) "source")
+
+---> (sdegeo:set-current-contact-set drain)
+
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.35 0 0)))) drain)
+
+(sdegeo:set-contact (list (car (find-edge-id (position 0.35 0 0)))) "drain")
+
+---> (sdegeo:set-current-contact-set substrate)
+
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.0 1.0 0)))) substrate)
+
+(sdegeo:set-contact (list (car (find-edge-id (position 0.0 1 0)))) "substrate")
+
+---> (sdegeo:set-current-contact-set gate)
+
+---> (sdegeo:set-contact (list (car (find-body-id (position 0 -0.102 0)))) gate)
+
+(sdegeo:set-contact (list (car (find-body-id (position 0 -0.102 0)))) "gate")
+
+(sdegeo:set-contact (list (car (find-edge-id (position 0.0 -0.2 0))) (car (find-edge-id (position 0.1 -0.102 0))) (car (find-edge-id (position 0.0 -0.004 0))) (car (find-edge-id (position -0.1 -0.102 0)))) "gate")
+
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.0 -0.2 0))) (car (find-edge-id (position 0.1 -0.102 0))) (car (find-edge-id (position 0.0 -0.004 0))) (car (find-edge-id (position -0.1 -0.102 0)))) gate)
+
+(sdegeo:set-contact (list (car (find-edge-id (position 0.0 -0.2 0))) (car (find-edge-id (position 0.1 -0.102 0))) (car (find-edge-id (position 0.0 -0.004 0))) (car (find-edge-id (position -0.1 -0.102 0)))) "gate")
+
+---> (sdegeo:insert-vertex (position -0.1 0.1 0))
+
+---> (sdegeo:insert-vertex (position -0.05 0.1 0))
+
+---> (sdegeo:set-current-contact-set bodytie)
+
+---> (sdegeo:set-contact (list (car (find-edge-id (position -0.075 0.1 0)))) bodytie)
+
+(sdegeo:set-contact (list (car (find-edge-id (position -0.075 0.1 0)))) "bodytie")
+
+---> (render:rebuild)
+
+---> (sdedr:define-constant-profile Const.Silicon BoronActiveConcentration 1e+15)
+
+---> (sdedr:define-constant-profile-material PlaceCD.Silicon Const.Silicon Silicon)
+
+---> (sdedr:define-refeval-window BaseLine.Source Line (position -0.8 0 0) (position -0.2 0 0))
+
+---> (sdedr:define-refeval-window BaseLine.Drain Line (position 0.2 0 0) (position 0.8 0 0))
+
+---> (sdedr:define-refeval-window BaseLine.SourceExt Line (position -0.8 0 0) (position -0.1 0 0))
+
+---> (sdedr:define-refeval-window BaseLine.DrainExt Line (position 0.1 0 0) (position 0.8 0 0))
+
+---> (sdedr:define-analytical-profile-placement PlaceAP.Source Guassian.SourceDrain BaseLine.Source Positive NoReplace Eval)
+
+---> (sdedr:define-gaussian-profile Guassian.SourceDrain ArsenicActiveConcentration PeakPos 0 PeakVal 5e+19 ValueAtDepth 1e+17 Depth 0.12 Gauss Factor 0.8)
+
+---> (sdedr:define-analytical-profile-placement PlaceAP.Drain Guassian.SourceDrain BaseLine.Drain Positive NoReplace Eval)
+
+---> (sdedr:define-gaussian-profile Guassian.SourceDrain ArsenicActiveConcentration PeakPos 0 PeakVal 5e+19 ValueAtDepth 1e+17 Depth 0.12 Gauss Factor 0.8)
+
+---> (sdedr:define-analytical-profile-placement PlaceAP.SourceExt Guassian.SourceDrainExt BaseLine.SourceExt Positive NoReplace Eval)
+
+---> (sdedr:define-gaussian-profile Guassian.SourceDrainExt ArsenicActiveConcentration PeakPos 0 PeakVal 5e+18 ValueAtDepth 1e+17 Depth 0.035 Gauss Factor 0.8)
+
+---> (sdedr:define-analytical-profile-placement PlaceAP.DrainExt Guassian.SourceDrainExt BaseLine.DrainExt Positive NoReplace Eval)
+
+---> (sdedr:define-gaussian-profile Guassian.SourceDrainExt ArsenicActiveConcentration PeakPos 0 PeakVal 5e+18 ValueAtDepth 1e+17 Depth 0.035 Gauss Factor 0.8)
+
+---> (sdedr:define-refeval-window RefWin.all Rectangle (position -1 -0.5 0) (position 1 1.5 0))
+
+---> (sdedr:define-refinement-size RelDef.all 0.25 0.1 0.25 0.1)
+
+---> (sdedr:define-refinement-placement Place.RF.all RelDef.all (list window RefWin.all))
+
+---> (sdedr:define-refinement-function RelDef.all DopingConcentration MaxTransDiff 1)
+
+---> (sdedr:define-refinement-function RelDef.all MaxLenInt Silicon Oxide 0.001 1.5 DoubleSide)
+
+---> (sdedr:define-refinement-size RefDef.Epi 0.1 0.0125 0.0025 0.0025)
+
+---> (sdedr:define-refinement-function RefDef.Epi DopingConcentration MaxTransDiff 1)
+
+---> (sdedr:define-refinement-region PlaceRF.Epi RefDef.Epi R.Siliconepi)
+
+---> (sdedr:define-refinement-function RefDef.Epi MaxLenInt R.Siliconepi R.Gateox 0.0002 1.5 DoubleSide UseRegionNames)
+
+---> (sde:set-meshing-command snmesh)
+
+---> (sde:build-mesh  /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure)
+
+****************************************************************************
+***                            Sentaurus Mesh                            ***
+***                        Version T-2022.03-SP2                         ***
+***                      (0.7745337, x86_64, Linux)                      ***
+***                                                                      ***
+***                       Copyright (C) 2005-2022                        ***
+***                            Synopsys, Inc.                            ***
+***                                                                      ***
+***  This software and the associated documentation are confidential     ***
+***  and proprietary to Synopsys, Inc.  Your use or disclosure of this   ***
+***  software is subject to the terms and conditions of a written        ***
+***  license agreement between you, or your company, and Synopsys, Inc.  ***
+****************************************************************************
+
+Compiled Fri Aug  5 13:12:10 PDT 2022 on: swe-vm-kcr-tcad01
+Running on: login02.iitmandi.ac.in
+Hardware type: x86_64
+OS name: Linux
+OS release: 3.10.0-1160.71.1.el7.x86_64
+OS version: #1 SMP Tue Jun 28 15:37:28 UTC 2022
+Process ID: 185708
+
+Flags used:
+
+** Generating 2d grid **
+
+Creating binary tree...done.
+Imprinting binary tree on the boundary...done.
+Optimizing boundary nodes...done.
+
+Number of vertices after binary tree generation : 
+  2371 (tree) + 330 (boundary)
+
+
+=================================  brep2d quality  =====================================
+minAngle: 90  [near (-0.2 -0.004)] at region=R.Spacer_lump_1
+nVerts = 330  nTris = 336  nRegs = 12
+bmin: -0.5 -0.2
+bmax: 0.5 1
+min area: 0.000390625  max area: 0.125  min edge length : 0.000390625
+total area  : 7.52261 interface area: 3.192
+total volume: 1.10834
+Conformal? true
+Are all boundaries on bbox? false
+==================================================================================
+** Delaunizing the mesh **
+
+Creating delaunizer input...done.
+Solving edges...done 
+Optimizing elements...done. (2633 vertices)
+Fixing diagonals...done.
+
+The final mesh has: 
+    2561 points.
+    4898 elements.
+      12 regions.
+Max. connectivity = 10 located at (-0.125;-0.125)
+
+
+==============================  tri-grid quality  ================================
+    0  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180
+ %   13   6   6   6   1   2   6   6   7  46  .   .   .   .   .             
+---------------------------------------------------------------------------------
+minAngle: 0.179049  maxAngle: 137.225
+nVerts = 2561  nTris = 4898  nMats = 7
+max connectivity (tris per node): 10
+bmin: -0.5 -0.2
+bmax: 0.5 1
+min edgeLength: 0.000390625  [near (-0.125 0.000195313)]
+min volume: 1.52588e-07  max volume: 0.0046875  Total volume: 1.07714
+bbox  volume: 1.2
+Are all boundaries on bbox? false
+=================================================================================
+
+Smallest region: R.Gateox  Total volume: 0.0016
+Interpolating data...done.
+done.
+Saving file /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure_msh.tdr...done.
+
+===============================  Timer Report===================================
+              Total Mesh Generation Time:     0.271s       100%
+                       Rate of #Vertices:  9.43e+03
+                          Rate of #Edges:  1.82e+04
+                          Rate of #Faces:   1.8e+04
+                       Rate of #Elements:         0
+
+                            Time Covered:         0s         0%
+
+
+"Meshing successful"
+---> (sde:save-model /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure)
+
+---> (system:command svisual /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure_msh.tdr &)
+
+---> #[end-of-file]
+
+"************************************************************************"
+"Sentaurus Structure Editor "
+"Start Time:    Fri Dec 19 15:10:05 2025"
+"End   Time:    Fri Dec 19 15:10:08 2025"
+"Total Execution Time (sec):    3"
+"Total System calls Time (sec): 0"
+"************************************************************************"
+Enabling MESA because GLX was not detected.
+AVX support detected. Using MESA with AVX support.
+
+****************************************************************************
+***                           Sentaurus Visual                           ***
+***                         Version T-2022.03-SP2                        ***
+***                      (0.7745337, x86_64, Linux)                      ***
+***                                                                      ***
+***                        Copyright (c) 2012-2022                       ***
+***                            Synopsys, Inc.                            ***
+***  This software and the associated documentation are confidential     ***
+***  and proprietary to Synopsys, Inc.  Your use or disclosure of this   ***
+***  software is subject to the terms and conditions of a written        ***
+***  license agreement between you, or your company, and Synopsys, Inc.  ***
+****************************************************************************
+
+Compiled Fri Aug  5 13:19:18 PDT 2022 on swe-vm-kcr-tcad01
+
+Datexcodes: Found and Loaded at: '/home/apps/swb/synopsys_tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/lib/datexcodes.txt'.
+Datexcodes: Found and Loaded at: '/home/apps/swb/synopsys_tcad/sentaurus/T-2022.03-SP2/tcad/current/lib/datexcodes.txt'.
+Tcl-Library: path added: '/home/apps/swb/synopsys_tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/lib/svisuallib'.
+Tcl-Library: path added: '/home/banotht.scee.iitmandi/svisuallib'.
+Loading Custom Buttons interface ... version 45
+Loading Extraction Library Version 2.3
+Loading Internal Library Version 0.7
+Loading Physical Constants Library Version 0.4
+Loading IFM Data Post-Processing Library Version 1.3.0
+Loading RF Parameter Extraction Library Version 1.0.2
+Tcl-Library: files successfully loaded: '6'.

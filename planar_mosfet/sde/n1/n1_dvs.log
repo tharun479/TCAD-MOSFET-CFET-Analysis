@@ -1,0 +1,119 @@
+Evaluating file n1_dvs.cmd
+---> (sdegeo:set-auto-region-naming ON)
+#t
+---> (sdegeo:set-default-boolean ABA)
+"ABA"
+---> (sdegeo:create-rectangle (position -0.5 0 0) (position 0.5 1 0) Silicon R.Siliconepi)
+#[body 5 1]
+---> (sdegeo:create-rectangle (position -0.2 -0.004 0) (position 0.2 0 0) Oxide R.Gateox)
+#[body 6 1]
+---> (sdegeo:create-rectangle (position -0.2 -0.2 0) (position 0.2 -0.004 0) Nitride R.Spacer)
+#[body 7 1]
+---> (sdegeo:create-rectangle (position -0.1 -0.2 0) (position 0.1 -0.004 0) PolySilicon R.Polygate)
+#[body 8 1]
+---> (sdegeo:create-rectangle (position -0.5 0.1 0) (position 0.5 0.2 0) Oxide R.Box)
+#[body 9 1]
+---> (sdegeo:fillet-2d (list (car (find-vertex-id (position 0.2 -0.2 0))) (car (find-vertex-id (position -0.2 -0.2 0)))) 0.08)
+(#[body 72 1])
+---> (render:rebuild)
+()
+---> (sdegeo:define-contact-set source 4 (color:rgb 1 0 0) ##)
+()
+---> (sdegeo:define-contact-set drain 4 (color:rgb 0 1 0) ##)
+()
+---> (sdegeo:define-contact-set gate 4 (color:rgb 1 1 0) ##)
+()
+---> (sdegeo:define-contact-set substrate 4 (color:rgb 0 0 1) ##)
+()
+---> (sdegeo:define-contact-set bodytie 4 (color:rgb 1 1 1) ##)
+()
+---> (sdegeo:set-current-contact-set source)
+""
+---> (sdegeo:set-contact (list (car (find-edge-id (position -0.35 0 0)))) source)
+#t
+---> (sdegeo:set-current-contact-set drain)
+"source"
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.35 0 0)))) drain)
+#t
+---> (sdegeo:set-current-contact-set substrate)
+"drain"
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.0 1.0 0)))) substrate)
+#t
+---> (sdegeo:set-current-contact-set gate)
+"substrate"
+---> (sdegeo:set-contact (list (car (find-body-id (position 0 -0.102 0)))) gate)
+#t
+---> (sdegeo:set-contact (list (car (find-edge-id (position 0.0 -0.2 0))) (car (find-edge-id (position 0.1 -0.102 0))) (car (find-edge-id (position 0.0 -0.004 0))) (car (find-edge-id (position -0.1 -0.102 0)))) gate)
+#t
+---> (sdegeo:insert-vertex (position -0.1 0.1 0))
+(#[vertex 145 1] #[vertex 144 1])
+---> (sdegeo:insert-vertex (position -0.05 0.1 0))
+(#[vertex 147 1] #[vertex 146 1])
+---> (sdegeo:set-current-contact-set bodytie)
+"gate"
+---> (sdegeo:set-contact (list (car (find-edge-id (position -0.075 0.1 0)))) bodytie)
+#t
+---> (render:rebuild)
+()
+---> (sdedr:define-constant-profile Const.Silicon BoronActiveConcentration 1e+15)
+#t
+---> (sdedr:define-constant-profile-material PlaceCD.Silicon Const.Silicon Silicon)
+#t
+---> (sdedr:define-refeval-window BaseLine.Source Line (position -0.8 0 0) (position -0.2 0 0))
+#[body 152 1]
+---> (sdedr:define-refeval-window BaseLine.Drain Line (position 0.2 0 0) (position 0.8 0 0))
+#[body 153 1]
+---> (sdedr:define-refeval-window BaseLine.SourceExt Line (position -0.8 0 0) (position -0.1 0 0))
+#[body 154 1]
+---> (sdedr:define-refeval-window BaseLine.DrainExt Line (position 0.1 0 0) (position 0.8 0 0))
+#[body 155 1]
+---> (sdedr:define-analytical-profile-placement PlaceAP.Source Guassian.SourceDrain BaseLine.Source Positive NoReplace Eval)
+#t
+---> (sdedr:define-gaussian-profile Guassian.SourceDrain ArsenicActiveConcentration PeakPos 0 PeakVal 5e+19 ValueAtDepth 1e+17 Depth 0.12 Gauss Factor 0.8)
+#t
+---> (sdedr:define-analytical-profile-placement PlaceAP.Drain Guassian.SourceDrain BaseLine.Drain Positive NoReplace Eval)
+#t
+---> (sdedr:define-gaussian-profile Guassian.SourceDrain ArsenicActiveConcentration PeakPos 0 PeakVal 5e+19 ValueAtDepth 1e+17 Depth 0.12 Gauss Factor 0.8)
+#t
+---> (sdedr:define-analytical-profile-placement PlaceAP.SourceExt Guassian.SourceDrainExt BaseLine.SourceExt Positive NoReplace Eval)
+#t
+---> (sdedr:define-gaussian-profile Guassian.SourceDrainExt ArsenicActiveConcentration PeakPos 0 PeakVal 5e+18 ValueAtDepth 1e+17 Depth 0.035 Gauss Factor 0.8)
+#t
+---> (sdedr:define-analytical-profile-placement PlaceAP.DrainExt Guassian.SourceDrainExt BaseLine.DrainExt Positive NoReplace Eval)
+#t
+---> (sdedr:define-gaussian-profile Guassian.SourceDrainExt ArsenicActiveConcentration PeakPos 0 PeakVal 5e+18 ValueAtDepth 1e+17 Depth 0.035 Gauss Factor 0.8)
+#t
+---> (sdedr:define-refeval-window RefWin.all Rectangle (position -1 -0.5 0) (position 1 1.5 0))
+#[body 156 1]
+---> (sdedr:define-refinement-size RelDef.all 0.25 0.1 0.25 0.1)
+#t
+---> (sdedr:define-refinement-placement Place.RF.all RelDef.all (list window RefWin.all))
+#t
+---> (sdedr:define-refinement-function RelDef.all DopingConcentration MaxTransDiff 1)
+#t
+---> (sdedr:define-refinement-function RelDef.all MaxLenInt Silicon Oxide 0.001 1.5 DoubleSide)
+#t
+---> (sdedr:define-refinement-size RefDef.Epi 0.1 0.0125 0.0025 0.0025)
+#t
+---> (sdedr:define-refinement-function RefDef.Epi DopingConcentration MaxTransDiff 1)
+#t
+---> (sdedr:define-refinement-region PlaceRF.Epi RefDef.Epi R.Siliconepi)
+#t
+---> (sdedr:define-refinement-function RefDef.Epi MaxLenInt R.Siliconepi R.Gateox 0.0002 1.5 DoubleSide UseRegionNames)
+#t
+---> (sde:set-meshing-command snmesh)
+#t
+---> (sde:build-mesh  /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure)
+#t
+---> (sde:save-model /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure)
+#t
+---> (system:command svisual /home/banotht.scee.iitmandi/mosfet_tutorial/final_structure_msh.tdr &)
+0
+---> #[end-of-file]
+"************************************************************************"
+"Sentaurus Structure Editor "
+"Start Time:    Fri Dec 19 15:10:05 2025"
+"End   Time:    Fri Dec 19 15:10:08 2025"
+"Total Execution Time (sec):    3"
+"Total System calls Time (sec): 0"
+"************************************************************************"
